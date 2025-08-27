@@ -1,68 +1,70 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Crypto Current — Cryptocurrency Quotes
 
-## Available Scripts
+Live website: https://lucas-chavez-crypto.netlify.app/
 
-In the project directory, you can run:
+Crypto Current is a React app to get real-time cryptocurrency quotes powered by the CryptoCompare API. Pick a fiat currency and a cryptocurrency to see the current price, daily high/low, 24h change, and last update.
 
-### `npm start`
+### Features
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Real-time quotes (no API key required)
+- Currency and cryptocurrency selectors
+- Loading spinner while fetching
+- Responsive UI styled with Emotion
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Tech Stack
 
-### `npm test`
+- React (Create React App)
+- Emotion (styled components)
+- Axios
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Screenshot
 
-### `npm run build`
+<img src="src/cryptomonedas.png" alt="Crypto Current screenshot" width="600" />
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Prerequisites:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Node.js LTS recommended. If using Node 17+ and you see an OpenSSL error, see the note below.
 
-### `npm run eject`
+Install and run:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```powershell
+npm install
+npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The app runs at http://localhost:3000.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Fix for OpenSSL error on Node 17+ (ERR_OSSL_EVP_UNSUPPORTED)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+If you get `error:0308010C:digital envelope routines::unsupported`, run:
 
-## Learn More
+```powershell
+$env:NODE_OPTIONS="--openssl-legacy-provider"; npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Or use a Node LTS where this isn’t necessary (e.g., 16.x/18.x/20.x), or upgrade react-scripts to v5.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project Structure
 
-### Code Splitting
+```
+src/
+	App.js
+	components/
+		Formulario.js
+		Cotizacion.js
+		Error.js
+		Spinner.js
+	hooks/
+		useMoneda.js
+		useCriptomoneda.js
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Deployment
 
-### Analyzing the Bundle Size
+Deployed on Netlify. To deploy your own fork, connect the GitHub repo in Netlify. Build command: `npm run build`. Publish directory: `build`.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Author
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+© 2025 Lucas Chavez
